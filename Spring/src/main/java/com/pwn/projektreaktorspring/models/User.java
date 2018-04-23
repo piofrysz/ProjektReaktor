@@ -43,6 +43,7 @@ public class User {
 
     private String opisSpring;
 
+
     private int ocenaSql;
 
     private int ocenaPython;

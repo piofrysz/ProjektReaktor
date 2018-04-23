@@ -26,9 +26,14 @@ public class UserController {
 //    }
 //    @Secured({"ROLE_ADMIN","ROLE_USER"})
     @RequestMapping("/zalogowany")
-    public String showUser(Model model) {
+    public String zalogowany(Model model) {
         User daneUser = userRepo.getByMail("a@a.pl");
         model.addAttribute("user", daneUser);
         return "zalogowanyView";
     }
+
+//    @GetMapping("/update")
+//    public String update(Model model){
+//        model.addAttribute("")
+//    }
 }
