@@ -31,7 +31,7 @@ public class HomeController {
         if (result.hasErrors()) {
             List<ObjectError> errors = result.getAllErrors();
             errors.forEach(err -> System.out.println(err.getDefaultMessage()));
-            return "registerFormView";
+            return "";
         }
         else {
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -41,8 +41,4 @@ public class HomeController {
         }
     }
 
-    @GetMapping("/zalogowany")
-    public String zalogowany(){
-        return "zalogowanyView";
-    }
 }

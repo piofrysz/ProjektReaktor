@@ -22,7 +22,7 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String userLogin) throws UsernameNotFoundException {
 
-        User activeUserInfo                   = userRepo.getByLogin(userLogin);
+        User activeUserInfo                   = userRepo.getByMail(userLogin);
 
         if(activeUserInfo == null) throw new UsernameNotFoundException("Nie odnaleziono użytkownika.");
         GrantedAuthority authority            = new SimpleGrantedAuthority(activeUserInfo.getUprawnienia());
