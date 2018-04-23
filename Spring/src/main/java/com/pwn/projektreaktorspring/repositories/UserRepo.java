@@ -1,4 +1,8 @@
 package com.pwn.projektreaktorspring.repositories;
 
-public interface UserRepo {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepo extends CrudRepository<User, Long> {
 }
