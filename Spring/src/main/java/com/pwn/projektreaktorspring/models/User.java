@@ -33,33 +33,15 @@ public class User {
     @NotEmpty
     private String telefon;
 
-    private String opisSql;
+    private String uprawnienia = "ROLE_USER";
 
-    //private List<Integer> oceny = new ArrayList<>();
+    private String opisSql;
 
     private String opisPython;
 
-
     private String opisJava;
 
-
-    //private List<String> opisy = new ArrayList<>();
-
-    private String uprawnienia = "ROLE_USER";
-//
-//    public User(String imie, String nazwisko, String mail, String haslo, String ghLogin, String telefon, List<Integer> oceny, List<String> opisy, String uprawnienia) {
-//        this.imie = imie;
-//        this.nazwisko = nazwisko;
-//        this.mail = mail;
-//        this.haslo = haslo;
-//        this.ghLogin = ghLogin;
-//        this.telefon = telefon;
-//        //this.oceny = oceny;
-//        //this.opisy = opisy;
-//        //this.uprawnienia = uprawnienia;
-//    }
     private String opisSpring;
-
 
     private int ocenaSql;
 
@@ -68,13 +50,7 @@ public class User {
     private int ocenaJava;
 
     private int ocenaSpring;
-//    private List<Integer> oceny = new ArrayList<>();
-//
-//
-//    private List<String> opisy = new ArrayList<>();
-//
-//    @NotEmpty
-    private String uprawnienia;
+
 
     public User(String imie, String nazwisko, String mail, String haslo, String ghLogin, String telefon, String opisSql, String opisPython, String opisJava, String opisSpring, int ocenaSql, int ocenaPython, int ocenaJava, int ocenaSpring, String uprawnienia) {
         this.imie = imie;
@@ -168,23 +144,6 @@ public class User {
     public void setTelefon(String telefon) {
         this.telefon = telefon;
     }
-
-//    public List<Integer> getOceny() {
-//        return oceny;
-//    }
-//
-//    public void setOceny(List<Integer> oceny) {
-//        this.oceny = oceny;
-//    }
-//
-//    public List<String> getOpisy() {
-//        return opisy;
-//    }
-//
-//    public void setOpisy(List<String> opisy) {
-//        this.opisy = opisy;
-//    }
-//
 
     public String getOpisSql() {
         return opisSql;

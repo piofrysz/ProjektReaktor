@@ -21,8 +21,7 @@ public class HomeController {
 
     @Autowired
     UserRepo userRepo;
-    @Autowired
-    MyUserDetailsService muds;
+
 
     @GetMapping("/")
     public String home(Model model){
@@ -35,12 +34,6 @@ public class HomeController {
 
         }
         return "index";
-    }
-    @Secured("ROLE_USER")
-    @GetMapping("/zalogowany")
-    public String zalogowany(){
-        System.out.println("Mail: " + muds.userDetails.getUsername());
-        return "zalogowanyView";
     }
 
     @GetMapping("/error-view")
