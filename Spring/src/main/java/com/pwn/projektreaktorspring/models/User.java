@@ -7,14 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotEmpty
@@ -35,8 +33,14 @@ public class User {
     @NotEmpty
     private String telefon;
 
+    private String opisSql;
 
     //private List<Integer> oceny = new ArrayList<>();
+
+    private String opisPython;
+
+
+    private String opisJava;
 
 
     //private List<String> opisy = new ArrayList<>();
@@ -54,6 +58,41 @@ public class User {
 //        //this.opisy = opisy;
 //        //this.uprawnienia = uprawnienia;
 //    }
+    private String opisSpring;
+
+
+    private int ocenaSql;
+
+    private int ocenaPython;
+
+    private int ocenaJava;
+
+    private int ocenaSpring;
+//    private List<Integer> oceny = new ArrayList<>();
+//
+//
+//    private List<String> opisy = new ArrayList<>();
+//
+//    @NotEmpty
+    private String uprawnienia;
+
+    public User(String imie, String nazwisko, String mail, String haslo, String ghLogin, String telefon, String opisSql, String opisPython, String opisJava, String opisSpring, int ocenaSql, int ocenaPython, int ocenaJava, int ocenaSpring, String uprawnienia) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.mail = mail;
+        this.haslo = haslo;
+        this.ghLogin = ghLogin;
+        this.telefon = telefon;
+        this.opisSql = opisSql;
+        this.opisPython = opisPython;
+        this.opisJava = opisJava;
+        this.opisSpring = opisSpring;
+        this.ocenaSql = ocenaSql;
+        this.ocenaPython = ocenaPython;
+        this.ocenaJava = ocenaJava;
+        this.ocenaSpring = ocenaSpring;
+        this.uprawnienia = uprawnienia;
+    }
 
     public User() {
     }
@@ -72,6 +111,7 @@ public class User {
                 ", uprawnienia='" + uprawnienia + '\'' +
                 '}';
     }
+
 
     public Long getId() {
         return id;
@@ -145,6 +185,71 @@ public class User {
 //        this.opisy = opisy;
 //    }
 //
+
+    public String getOpisSql() {
+        return opisSql;
+    }
+
+    public void setOpisSql(String opisSql) {
+        this.opisSql = opisSql;
+    }
+
+    public String getOpisPython() {
+        return opisPython;
+    }
+
+    public void setOpisPython(String opisPython) {
+        this.opisPython = opisPython;
+    }
+
+    public String getOpisJava() {
+        return opisJava;
+    }
+
+    public void setOpisJava(String opisJava) {
+        this.opisJava = opisJava;
+    }
+
+    public String getOpisSpring() {
+        return opisSpring;
+    }
+
+    public void setOpisSpring(String opisSpring) {
+        this.opisSpring = opisSpring;
+    }
+
+    public int getOcenaSql() {
+        return ocenaSql;
+    }
+
+    public void setOcenaSql(int ocenaSql) {
+        this.ocenaSql = ocenaSql;
+    }
+
+    public int getOcenaPython() {
+        return ocenaPython;
+    }
+
+    public void setOcenaPython(int ocenaPython) {
+        this.ocenaPython = ocenaPython;
+    }
+
+    public int getOcenaJava() {
+        return ocenaJava;
+    }
+
+    public void setOcenaJava(int ocenaJava) {
+        this.ocenaJava = ocenaJava;
+    }
+
+    public int getOcenaSpring() {
+        return ocenaSpring;
+    }
+
+    public void setOcenaSpring(int ocenaSpring) {
+        this.ocenaSpring = ocenaSpring;
+    }
+
     public String getUprawnienia() {
         return uprawnienia;
     }

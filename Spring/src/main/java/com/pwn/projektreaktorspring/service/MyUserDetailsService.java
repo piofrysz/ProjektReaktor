@@ -1,4 +1,4 @@
-package com.pwn.projektreaktorspring.service;
+﻿package com.pwn.projektreaktorspring.service;
 
 import com.pwn.projektreaktorspring.models.User;
 import com.pwn.projektreaktorspring.repositories.UserRepo;
@@ -15,6 +15,7 @@ import java.util.Arrays;
 
 @Service
 public class MyUserDetailsService implements UserDetailsService {
+
     public UserDetails userDetails;
 
     @Autowired
@@ -34,6 +35,7 @@ public class MyUserDetailsService implements UserDetailsService {
         String userPasswdVal                 = passwordEncoder.encode(activeUserInfo.getHaslo());
 
         userDetails = new org.springframework.security.core.userdetails.User(userLoginVal, userPasswdVal, Arrays.asList(authority));
+
         return userDetails;
     }
 }

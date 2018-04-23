@@ -36,9 +36,6 @@ public class HomeController {
         }
         return "index";
     }
-
-
-
     @Secured("ROLE_USER")
     @GetMapping("/zalogowany")
     public String zalogowany(){
@@ -50,4 +47,5 @@ public class HomeController {
     public String errorViewHandler(){
         return "error";
     }
+
 }

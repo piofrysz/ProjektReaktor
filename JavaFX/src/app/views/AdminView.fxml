@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: Gainsboro;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.AdminController">
+   <children>
+      <MenuBar layoutX="-8.0" layoutY="2.0" prefHeight="25.0" prefWidth="900.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Pomoc">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#infoAction" text="Info" />
+                  <Menu mnemonicParsing="false" text="Jak Dodać/Zmenić">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#howToChangeUserAction" text="Użytkownika" />
+                        <MenuItem mnemonicParsing="false" onAction="#howToChangeProjectAction" text="Projekt" />
+                        <MenuItem mnemonicParsing="false" onAction="#howToChangeGradeAction" text="Ocenę" />
+                     </items>
+                  </Menu>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Dodaj...">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#addAdminAction" text="Administratora" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Wyjdź">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#exitAction" text="Exit" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label alignment="CENTER" layoutY="50.0" prefHeight="17.0" prefWidth="150.0" text="Zmień Użytkownika:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cb_users" layoutX="150.0" layoutY="46.0" prefWidth="150.0" />
+      <TabPane layoutY="100.0" prefHeight="400.0" prefWidth="900.0" style="-fx-background-color: BurlyWood;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Dane Użytkownika">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="900.0" style="-fx-background-color: BurlyWood;">
+                     <children>
+                        <Label alignment="CENTER" layoutY="10.0" prefHeight="30.0" prefWidth="100.0" text="Imię:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_userName" layoutX="110.0" layoutY="10.0" prefHeight="30.0" prefWidth="201.0" />
+                        <Label alignment="CENTER" layoutY="50.0" prefHeight="30.0" prefWidth="100.0" text="Nazwisko:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_userLast" layoutX="110.0" layoutY="50.0" prefHeight="30.0" prefWidth="200.0" />
+                        <Label alignment="CENTER" layoutY="90.0" prefHeight="30.0" prefWidth="100.0" text="Adres e-mail:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_userMail" layoutX="110.0" layoutY="90.0" prefHeight="30.0" prefWidth="200.0" />
+                        <Label alignment="CENTER" layoutY="130.0" prefHeight="30.0" prefWidth="100.0" text="Hasło:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_userPasswd" layoutX="110.0" layoutY="130.0" prefHeight="30.0" prefWidth="200.0" />
+                        <Label alignment="CENTER" layoutY="170.0" prefHeight="30.0" prefWidth="100.0" text="Konto Github:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_userGitHubAcc" layoutX="110.0" layoutY="170.0" prefHeight="30.0" prefWidth="200.0" />
+                        <Label alignment="CENTER" layoutY="210.0" prefHeight="30.0" prefWidth="100.0" text="Telefon">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_userPhone" layoutX="110.0" layoutY="210.0" prefHeight="30.0" prefWidth="200.0" />
+                        <Button fx:id="btn_submitUser" layoutX="110.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#submitUserAction" prefHeight="30.0" prefWidth="81.0" text="Zmień">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btn_userDel" layoutX="230.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#deleteAction" prefHeight="30.0" prefWidth="80.0" text="Usuń">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Projekt1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="900.0">
+                     <children>
+                        <Label layoutX="200.0" layoutY="20.0" text="Opis projektu:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="tf_proj1" layoutX="200.0" layoutY="40.0" prefHeight="200.0" prefWidth="600.0" />
+                        <Label layoutX="40.0" layoutY="20.0" prefHeight="30.0" prefWidth="100.0" text="Ocena Projektu:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="spinner_proj1" layoutX="40.0" layoutY="50.0" prefWidth="50.0" />
+                        <Slider fx:id="slider_proj1" layoutX="40.0" layoutY="91.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                        <Button fx:id="btn_Proj1" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Projekt2">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="900.0">
+                     <children>
+                        <Label layoutX="200.0" layoutY="20.0" text="Opis projektu:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="tf_proj2" layoutX="200.0" layoutY="40.0" prefHeight="200.0" prefWidth="600.0" />
+                        <Label layoutX="40.0" layoutY="20.0" prefHeight="30.0" prefWidth="100.0" text="Ocena Projektu:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="spinner_proj2" layoutX="40.0" layoutY="50.0" prefWidth="50.0" />
+                        <Slider fx:id="slider_proj2" layoutX="40.0" layoutY="91.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                        <Button fx:id="btn_Proj2" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Projekt3">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="900.0">
+                     <children>
+                        <Label layoutX="200.0" layoutY="20.0" text="Opis projektu:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="tf_proj3" layoutX="200.0" layoutY="40.0" prefHeight="200.0" prefWidth="600.0" />
+                        <Label layoutX="40.0" layoutY="20.0" prefHeight="30.0" prefWidth="100.0" text="Ocena Projektu:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="sprinner_proj3" layoutX="40.0" layoutY="50.0" prefWidth="50.0" />
+                        <Slider fx:id="slider_proj3" layoutX="40.0" layoutY="91.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                        <Button fx:id="btn_proj3" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Projekt4">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="900.0">
+                     <children>
+                        <Label layoutX="200.0" layoutY="20.0" text="Opis projektu:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="tf_proj4" layoutX="200.0" layoutY="40.0" prefHeight="200.0" prefWidth="600.0" />
+                        <Label layoutX="40.0" layoutY="20.0" prefHeight="30.0" prefWidth="100.0" text="Ocena Projektu:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="spinner_proj4" layoutX="40.0" layoutY="50.0" prefWidth="50.0" />
+                        <Slider fx:id="slider_proj4" layoutX="40.0" layoutY="91.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                        <Button fx:id="btn_proj4" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

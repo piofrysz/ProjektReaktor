@@ -8,3 +8,4 @@ passwd_a varchar(15)
 );
 
 select * from user;
+
