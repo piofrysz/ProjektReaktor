@@ -7,8 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class User {
