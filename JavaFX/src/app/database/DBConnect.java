@@ -17,7 +17,7 @@ public class DBConnect {
         }
     }
     public Connection setConnection(){
-        String urlConn = "jdbc:mysql://localhost:3306/skrypt-projektreaktorDB";
+        String urlConn = "jdbc:mysql://localhost:3306/projektreaktor_db";
         try {
             conn = DriverManager.getConnection(urlConn,"root","MaximuS94");
             System.out.println("Połączenie ustanowione!");

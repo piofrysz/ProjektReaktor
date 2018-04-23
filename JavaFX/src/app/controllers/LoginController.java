@@ -1,17 +1,21 @@
 package app.controllers;
 
 import app.database.DBConnect;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,18 +39,19 @@ public class LoginController {
     private void externalLoginAction() {
         try {
             PreparedStatement ps = conn.prepareStatement(
-                    "SELECT * FROM logowanie WHERE login = ? and (haslo = ? or haslo = ?)");
+                    "SELECT * FROM admin where login_a = ? and (passwd_a = ? or passwd_a = ?)");
             ps.setString(1,tf_login.getText());
             ps.setString(2,tf_passwd.getText());
             ps.setString(3, pf_passwd.getText());
             ResultSet wynikLogowania =ps.executeQuery();
+            System.out.println(wynikLogowania);
             if(wynikLogowania.next()){
                 licznikLogowan = 3;
-                if (wynikLogowania.getString("uprawnienia").equals("admin")) {
+                if (wynikLogowania.equals(tf_login.getText()) && wynikLogowania.equals(tf_passwd.getText())) {
                     System.out.println("Zalogowano jako admin");
                     try {
                         Stage adminStage = new Stage();
-                        Parent root = FXMLLoader.load(getClass().getResource("/app/view/AdminView.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("/app/views/AdminView.fxml"));
                         adminStage.setTitle("Panel administracyjne");
                         adminStage.setScene(new Scene(root));
                         adminStage.show();
@@ -55,7 +60,7 @@ public class LoginController {
                     }
                 }
             } else {
-                System.out.println("Błędne dane logowania!");
+                System.out.println("Błędne logowanie!");
                 licznikLogowan --;
                 if(licznikLogowan < 0){
                     System.exit(0);
