@@ -1,6 +1,7 @@
 package com.pwn.projektreaktorspring.controllers;
 
 
+import com.pwn.projektreaktorspring.models.User;
 import com.pwn.projektreaktorspring.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,7 +35,7 @@ public class HomeController {
         }
         else {
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            user.setHaslo(passwordEncoder.encode(user.getHaslo()));
             userRepo.save(user);
             return "zalogowanyView";
         }
