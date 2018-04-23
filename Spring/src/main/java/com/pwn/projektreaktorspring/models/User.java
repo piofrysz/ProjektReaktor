@@ -23,7 +23,7 @@ public class User {
     @NotEmpty
     private String nazwisko;
 
-    @Email
+    @NotEmpty
     private String mail;
 
     @NotEmpty
@@ -36,25 +36,24 @@ public class User {
     private String telefon;
 
 
-    private List<Integer> oceny = new ArrayList<>();
+    //private List<Integer> oceny = new ArrayList<>();
 
 
-    private List<String> opisy = new ArrayList<>();
+    //private List<String> opisy = new ArrayList<>();
 
-    @NotEmpty
-    private String uprawnienia;
-
-    public User(String imie, String nazwisko, String mail, String haslo, String ghLogin, String telefon, List<Integer> oceny, List<String> opisy, String uprawnienia) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.mail = mail;
-        this.haslo = haslo;
-        this.ghLogin = ghLogin;
-        this.telefon = telefon;
-        this.oceny = oceny;
-        this.opisy = opisy;
-        this.uprawnienia = uprawnienia;
-    }
+    private String uprawnienia = "ROLE_USER";
+//
+//    public User(String imie, String nazwisko, String mail, String haslo, String ghLogin, String telefon, List<Integer> oceny, List<String> opisy, String uprawnienia) {
+//        this.imie = imie;
+//        this.nazwisko = nazwisko;
+//        this.mail = mail;
+//        this.haslo = haslo;
+//        this.ghLogin = ghLogin;
+//        this.telefon = telefon;
+//        //this.oceny = oceny;
+//        //this.opisy = opisy;
+//        //this.uprawnienia = uprawnienia;
+//    }
 
     public User() {
     }
@@ -68,8 +67,8 @@ public class User {
                 ", haslo='" + haslo + '\'' +
                 ", ghLogin='" + ghLogin + '\'' +
                 ", telefon='" + telefon + '\'' +
-                ", oceny=" + oceny +
-                ", opisy=" + opisy +
+              //  ", oceny=" + oceny +
+              //  ", opisy=" + opisy +
                 ", uprawnienia='" + uprawnienia + '\'' +
                 '}';
     }
@@ -130,22 +129,22 @@ public class User {
         this.telefon = telefon;
     }
 
-    public List<Integer> getOceny() {
-        return oceny;
-    }
-
-    public void setOceny(List<Integer> oceny) {
-        this.oceny = oceny;
-    }
-
-    public List<String> getOpisy() {
-        return opisy;
-    }
-
-    public void setOpisy(List<String> opisy) {
-        this.opisy = opisy;
-    }
-
+//    public List<Integer> getOceny() {
+//        return oceny;
+//    }
+//
+//    public void setOceny(List<Integer> oceny) {
+//        this.oceny = oceny;
+//    }
+//
+//    public List<String> getOpisy() {
+//        return opisy;
+//    }
+//
+//    public void setOpisy(List<String> opisy) {
+//        this.opisy = opisy;
+//    }
+//
     public String getUprawnienia() {
         return uprawnienia;
     }

@@ -1,6 +1,6 @@
-package com.pwn.blog.configurations;
+package com.pwn.projektreaktorspring.configurations;
 
-import com.pwn.blog.service.MyAppUserDetailsService;
+import com.pwn.projektreaktorspring.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -16,32 +16,34 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private MyAppUserDetailsService myAppUserDetailsService;
+    private MyUserDetailsService myUserDetailsService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
 
-                .antMatchers("/").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/").permitAll()
+//                .antMatchers("/zalogowany").hasAnyRole("ADMIN", "USER")
 
                 .and().formLogin()  //login configuration
-                .loginPage("/login")
-                .loginProcessingUrl("/login")
+                .loginPage("/")
+                .loginProcessingUrl("/")
                 .usernameParameter("app_username")
                 .passwordParameter("app_password")
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/zalogowany")
 
                 .and().logout()    //logout configuration
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/login")
+                .logoutSuccessUrl("/")
 
                 .and().exceptionHandling() //exception handling configuration
                 .accessDeniedPage("/error-view");
     }
 
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        auth.userDetailsService(myAppUserDetailsService).passwordEncoder(passwordEncoder);
+        auth.userDetailsService(myUserDetailsService).passwordEncoder(passwordEncoder);
     }
 }

@@ -21,23 +21,20 @@ public class RegisterController {
     @Autowired
     private UserRepo userRepo;
 
-    @GetMapping("/register")
-    public String register(Model model) {
-        model.addAttribute("user", new User());
-        return "registerFormView";
-    }
 
     @PostMapping("/register")
     public String register(@Valid @ModelAttribute User user, BindingResult result) {
         if (result.hasErrors()) {
             List<ObjectError> errors = result.getAllErrors();
             errors.forEach(err -> System.out.println(err.getDefaultMessage()));
+            return "error";
         } else {
-            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-            user.setHaslo(passwordEncoder.encode(user.getHaslo()));
+//            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//            user.setHaslo(passwordEncoder.encode(user.getHaslo()));
             userRepo.save(user);
+            return "register";
 
         }
-        return "redirect:/";
+
     }
 }
