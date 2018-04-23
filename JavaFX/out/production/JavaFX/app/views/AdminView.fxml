@@ -91,7 +91,7 @@
                            </font>
                         </Label>
                         <TextField fx:id="tf_userPhone" layoutX="110.0" layoutY="210.0" prefHeight="30.0" prefWidth="200.0" />
-                        <Button fx:id="btn_userAgree" layoutX="110.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#changeAction" prefHeight="30.0" prefWidth="81.0" text="Zmień">
+                        <Button fx:id="btn_submitUser" layoutX="110.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#submitUserAction" prefHeight="30.0" prefWidth="81.0" text="Zmień">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -121,8 +121,8 @@
                            </font>
                         </Label>
                         <Spinner fx:id="spinner_proj1" layoutX="40.0" layoutY="50.0" prefWidth="50.0" />
-                        <Slider fx:id="slider_proj1" layoutX="40.0" layoutY="91.0" max="10.0" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
-                        <Button fx:id="btn_agreeProj1" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
+                        <Slider fx:id="slider_proj1" layoutX="40.0" layoutY="91.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                        <Button fx:id="btn_Proj1" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -147,8 +147,8 @@
                            </font>
                         </Label>
                         <Spinner fx:id="spinner_proj2" layoutX="40.0" layoutY="50.0" prefWidth="50.0" />
-                        <Slider fx:id="slider_proj2" layoutX="40.0" layoutY="91.0" max="10.0" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
-                        <Button fx:id="btn_agreeProj2" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
+                        <Slider fx:id="slider_proj2" layoutX="40.0" layoutY="91.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                        <Button fx:id="btn_Proj2" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -173,7 +173,7 @@
                            </font>
                         </Label>
                         <Spinner fx:id="sprinner_proj3" layoutX="40.0" layoutY="50.0" prefWidth="50.0" />
-                        <Slider fx:id="slider_proj3" layoutX="40.0" layoutY="91.0" max="10.0" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                        <Slider fx:id="slider_proj3" layoutX="40.0" layoutY="91.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
                         <Button fx:id="btn_proj3" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
                            <font>
                               <Font size="14.0" />
@@ -199,7 +199,7 @@
                            </font>
                         </Label>
                         <Spinner fx:id="spinner_proj4" layoutX="40.0" layoutY="50.0" prefWidth="50.0" />
-                        <Slider fx:id="slider_proj4" layoutX="40.0" layoutY="91.0" max="10.0" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                        <Slider fx:id="slider_proj4" layoutX="40.0" layoutY="91.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
                         <Button fx:id="btn_proj4" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
                            <font>
                               <Font size="14.0" />

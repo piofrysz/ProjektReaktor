@@ -44,15 +44,14 @@ public class LoginController {
             ps.setString(2,tf_passwd.getText());
             ps.setString(3, pf_passwd.getText());
             ResultSet wynikLogowania =ps.executeQuery();
-            System.out.println(wynikLogowania);
             if(wynikLogowania.next()){
                 licznikLogowan = 3;
-                if (wynikLogowania.equals(tf_login.getText()) && wynikLogowania.equals(tf_passwd.getText())) {
-                    System.out.println("Zalogowano jako admin");
+                if (wynikLogowania.getString("login_a").equals(tf_login.getText()) && wynikLogowania.getString("passwd_a").equals(pf_passwd.getText())) {
+                    System.out.println("Welcome to our kingdom! Almighty Admin!");
                     try {
                         Stage adminStage = new Stage();
                         Parent root = FXMLLoader.load(getClass().getResource("/app/views/AdminView.fxml"));
-                        adminStage.setTitle("Panel administracyjne");
+                        adminStage.setTitle("Królestwo Admina");
                         adminStage.setScene(new Scene(root));
                         adminStage.show();
                     } catch (IOException e) {

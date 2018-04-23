@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.AdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: Gainsboro;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.AdminController">
    <children>
       <MenuBar layoutX="-8.0" layoutY="2.0" prefHeight="25.0" prefWidth="900.0">
         <menus>
@@ -49,11 +49,11 @@
          </font>
       </Label>
       <ComboBox fx:id="cb_users" layoutX="150.0" layoutY="46.0" prefWidth="150.0" />
-      <TabPane layoutY="100.0" prefHeight="400.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="100.0" prefHeight="400.0" prefWidth="900.0" style="-fx-background-color: BurlyWood;" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Dane Użytkownika">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="900.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="900.0" style="-fx-background-color: BurlyWood;">
                      <children>
                         <Label alignment="CENTER" layoutY="10.0" prefHeight="30.0" prefWidth="100.0" text="Imię:">
                            <font>
@@ -91,7 +91,7 @@
                            </font>
                         </Label>
                         <TextField fx:id="tf_userPhone" layoutX="110.0" layoutY="210.0" prefHeight="30.0" prefWidth="200.0" />
-                        <Button fx:id="btn_userAgree" layoutX="110.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#changeAction" prefHeight="30.0" prefWidth="81.0" text="Zmień">
+                        <Button fx:id="btn_submitUser" layoutX="110.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#submitUserAction" prefHeight="30.0" prefWidth="81.0" text="Zmień">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -122,7 +122,7 @@
                         </Label>
                         <Spinner fx:id="spinner_proj1" layoutX="40.0" layoutY="50.0" prefWidth="50.0" />
                         <Slider fx:id="slider_proj1" layoutX="40.0" layoutY="91.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
-                        <Button fx:id="btn_agreeProj1" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
+                        <Button fx:id="btn_Proj1" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -148,7 +148,7 @@
                         </Label>
                         <Spinner fx:id="spinner_proj2" layoutX="40.0" layoutY="50.0" prefWidth="50.0" />
                         <Slider fx:id="slider_proj2" layoutX="40.0" layoutY="91.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="5.0" />
-                        <Button fx:id="btn_agreeProj2" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
+                        <Button fx:id="btn_Proj2" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="Zmień">
                            <font>
                               <Font size="14.0" />
                            </font>

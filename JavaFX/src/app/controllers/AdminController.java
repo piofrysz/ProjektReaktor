@@ -1,9 +1,13 @@
 package app.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdminController {
 
@@ -29,7 +33,7 @@ public class AdminController {
     private TextField tf_userPhone;
 
     @FXML
-    private Button btn_userAgree;
+    private Button btn_submitUser;
 
     @FXML
     private Button btn_userDel;
@@ -44,7 +48,7 @@ public class AdminController {
     private Slider slider_proj1;
 
     @FXML
-    private Button btn_agreeProj1;
+    private Button btn_Proj1;
 
     @FXML
     private TextArea tf_proj2;
@@ -56,7 +60,7 @@ public class AdminController {
     private Slider slider_proj2;
 
     @FXML
-    private Button btn_agreeProj2;
+    private Button btn_Proj2;
 
     @FXML
     private TextArea tf_proj3;
@@ -86,10 +90,25 @@ public class AdminController {
     void addAdminAction(ActionEvent event) {
 
     }
-
+    Event e;
+    private List<Event> listaEventow = new ArrayList<>();
     @FXML
-    void changeAction(MouseEvent event) {
-
+    void submitUserAction(MouseEvent event) {
+        if(tf_userName.getText().equals("") ||
+                tf_userLast.getText().equals("") ||
+                tf_userMail.getText().equals("") ||
+                tf_userPasswd.getText().equals("") ||
+                tf_userGitHubAcc.getText().equals("") ||
+                tf_userPhone.getText().equals("") ||
+                cb_users.getValue() == null){
+            Alert a = new Alert(Alert.AlertType.WARNING);
+            a.setTitle("Błąd");
+            a.setHeaderText("Błędnie wypełniony formularz");
+            a.setContentText("Uzupełnij wszystkie pola");
+            a.showAndWait();
+        } else {
+            System.out.println("Wprowadziłeś wszystkie dane");
+        }
     }
 
     @FXML
